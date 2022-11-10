@@ -1,0 +1,420 @@
+openapi: 3.0.3
+info:
+  title: Sensor API
+  version: 1.0.0
+  description: This is an Onyx interview API documentation.
+paths:
+  /api/data/:
+    get:
+      operationId: data_list
+      parameters:
+      - in: query
+        name: from_to_reading_date_after
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: from_to_reading_date_before
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: from_to_sensor_values_max
+        schema:
+          type: number
+          format: double
+      - in: query
+        name: from_to_sensor_values_min
+        schema:
+          type: number
+          format: double
+      - in: query
+        name: sensor_id
+        schema:
+          type: integer
+      tags:
+      - data
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Readings'
+          description: ''
+    post:
+      operationId: data_create
+      tags:
+      - data
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Readings'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Readings'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Readings'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Readings'
+          description: ''
+  /api/data/{id}/:
+    get:
+      operationId: data_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this readings.
+        required: true
+      tags:
+      - data
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Readings'
+          description: ''
+    put:
+      operationId: data_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this readings.
+        required: true
+      tags:
+      - data
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Readings'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Readings'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Readings'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Readings'
+          description: ''
+    patch:
+      operationId: data_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this readings.
+        required: true
+      tags:
+      - data
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedReadings'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedReadings'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedReadings'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Readings'
+          description: ''
+    delete:
+      operationId: data_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this readings.
+        required: true
+      tags:
+      - data
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/sensors/:
+    get:
+      operationId: sensors_list
+      tags:
+      - sensors
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Sensors'
+          description: ''
+    post:
+      operationId: sensors_create
+      tags:
+      - sensors
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Sensors'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Sensors'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Sensors'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Sensors'
+          description: ''
+  /api/sensors/{id}/:
+    get:
+      operationId: sensors_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this sensors.
+        required: true
+      tags:
+      - sensors
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Sensors'
+          description: ''
+    put:
+      operationId: sensors_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this sensors.
+        required: true
+      tags:
+      - sensors
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Sensors'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Sensors'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Sensors'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Sensors'
+          description: ''
+    patch:
+      operationId: sensors_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this sensors.
+        required: true
+      tags:
+      - sensors
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedSensors'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedSensors'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedSensors'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Sensors'
+          description: ''
+    delete:
+      operationId: sensors_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this sensors.
+        required: true
+      tags:
+      - sensors
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+components:
+  schemas:
+    PatchedReadings:
+      type: object
+      properties:
+        sensor:
+          type: integer
+        date:
+          type: string
+          format: date-time
+          readOnly: true
+        value:
+          type: number
+          format: double
+        sensor_name:
+          type: string
+          readOnly: true
+    PatchedSensors:
+      type: object
+      properties:
+        name:
+          type: string
+          maxLength: 50
+        unit:
+          type: string
+          maxLength: 50
+        date:
+          type: string
+          format: date-time
+          readOnly: true
+        last_modified:
+          type: string
+          format: date-time
+          readOnly: true
+    Readings:
+      type: object
+      properties:
+        sensor:
+          type: integer
+        date:
+          type: string
+          format: date-time
+          readOnly: true
+        value:
+          type: number
+          format: double
+        sensor_name:
+          type: string
+          readOnly: true
+      required:
+      - date
+      - sensor
+      - sensor_name
+      - value
+    Sensors:
+      type: object
+      properties:
+        name:
+          type: string
+          maxLength: 50
+        unit:
+          type: string
+          maxLength: 50
+        date:
+          type: string
+          format: date-time
+          readOnly: true
+        last_modified:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - date
+      - last_modified
+      - name
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

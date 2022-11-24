@@ -13,7 +13,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        platform: [ubuntu-latest]
+        platform: [ubuntu-latest, macos-latest]
         python-version: [3.9, 3.11]
     runs-on: ${{matrix.platform}}
     steps:

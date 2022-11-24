@@ -40,6 +40,7 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         tags: kcdimgba/devopswithpython:latest
+        push: true
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
     - name: check message

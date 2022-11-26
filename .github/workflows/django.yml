@@ -8,12 +8,10 @@ on:
 
 jobs:
   build:
-
-
     strategy:
       max-parallel: 4
       matrix:
-        platform: [ubuntu-latest]
+        platform: [macos-12]
         python-version: [3.9]
     runs-on: ${{matrix.platform}}
     steps:
@@ -29,8 +27,8 @@ jobs:
     - name: Run Tests
       run: |
         python manage.py test
-    - name: Check docker installed or not
-      run: docker run hello-world
+    # - name: Check docker installed or not
+    #  run: docker run hello-world
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
     -

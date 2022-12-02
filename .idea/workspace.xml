@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1c57c56-edb2-4a6d-90aa-9b4183360210" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onyx/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/onyx/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +135,12 @@
       <workItem from="1668883067046" duration="316000" />
       <workItem from="1668884360831" duration="3478000" />
       <workItem from="1669240540180" duration="1366000" />
-      <workItem from="1669241924587" duration="4753000" />
+      <workItem from="1669241924587" duration="10208000" />
+      <workItem from="1669503365413" duration="41000" />
+      <workItem from="1669503410300" duration="5994000" />
+      <workItem from="1669676651559" duration="6700000" />
+      <workItem from="1669729939280" duration="272000" />
+      <workItem from="1669986327749" duration="737000" />
     </task>
     <servers />
   </component>

@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e1c57c56-edb2-4a6d-90aa-9b4183360210" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/pyvenv.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/venv/pyvenv.cfg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +140,8 @@
       <workItem from="1669503410300" duration="5994000" />
       <workItem from="1669676651559" duration="6700000" />
       <workItem from="1669729939280" duration="272000" />
-      <workItem from="1669986327749" duration="2143000" />
+      <workItem from="1669986327749" duration="2145000" />
+      <workItem from="1669989878002" duration="45889000" />
     </task>
     <servers />
   </component>
